@@ -1,0 +1,31 @@
+# Header
+menu:
+  home: /
+  technology: /categories/technology
+  doodle: /categories/doodle
+  archive: /archives
+  cv: /resume
+  about: /about
+
+#widgets
+widgets:
+  # - search
+  # - photo
+  # - category
+  # - weixin
+  # - calendar
+  # - links
+  # - tagcloud
+  # - tag
+  # - archive
+  # - weibo
+
+# Author
+author: ecronic
+
+
+# Content
+#excerpt_link: More +
+
+# highlight.js
+highlight_theme: tomorrow-night

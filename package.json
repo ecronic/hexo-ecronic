@@ -1,0 +1,16 @@
+{
+    "name": "hexo-ecronic",
+    "version": "1.0.0",
+    "description": "hexo theme",
+    "main": "index.js",
+    "keywords": [
+        "hexo",
+        "theme",
+        "ecronic"
+    ],
+    "author": "ecronic",
+    "license": "MIT",
+    "devDependencies": {
+        "hexo-renderer-sass": "^0.3.2"
+    }
+}

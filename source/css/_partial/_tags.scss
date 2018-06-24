@@ -1,0 +1,24 @@
+.tags{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    h1{
+        font-size: 1.8em;
+    }
+    .tag_item{
+        .title{
+            color: inherit;
+            text-decoration: none;
+            &:hover{
+                color: $tag-item-hover;
+            }
+        }
+        width: 80%;
+        padding: 20px 0;
+        border-bottom: 1px solid #ccc;
+        .date{
+            float: right;
+        }
+    }
+}

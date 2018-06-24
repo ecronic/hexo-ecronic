@@ -1,0 +1,34 @@
+.pagination{
+    margin-top: 30px;
+    font-size: 1.2em;
+    a{
+        color: $pagination-link;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    .page-number{
+        margin:0 10px;
+        vertical-align: middle;
+    }
+    .prev{
+        margin-right: 4px;
+    }
+    .next{
+        margin-left: 4px;
+    }
+    .current{
+        color: $pagination-current;
+        font-size: 1.4em;
+        font-weight: 800;
+    }
+}
+
+.gallery{
+    max-width: 100%;
+}
+
+.line{
+    margin-right: 10px;
+}

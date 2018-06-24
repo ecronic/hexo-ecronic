@@ -1,0 +1,9 @@
+<% if(type === 'index'){ %>
+    <%- partial('_partial/_article/index', {post: post}) %>
+<% } else if(type === 'resume'){ %>
+    <%- partial('_partial/_article/resume', {post: post}) %>
+<% }  else if(type === 'about'){ %>
+    <%- partial('_partial/_article/about', {post: post}) %>
+<% } else { %>
+    <%- partial('_partial/_article/detail', {post: post}) %>
+<% } %>
