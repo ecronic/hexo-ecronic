@@ -1,0 +1,2 @@
+# hexo-ecronic
+Hexo Theme
