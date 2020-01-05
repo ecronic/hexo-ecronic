@@ -1,8 +1,8 @@
 # Header
 menu:
   home: /
-  technology: /categories/technology
-  doodle: /categories/doodle
+  technology: /categories/技术
+  doodle: /categories/生活
   archive: /archives
   cv: /resume
   about: /about
@@ -28,4 +28,4 @@ author: ecronic
 #excerpt_link: More +
 
 # highlight.js
-highlight_theme: tomorrow-night
+highlight_theme: tomorrow

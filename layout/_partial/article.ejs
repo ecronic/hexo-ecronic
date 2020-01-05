@@ -1,9 +1,15 @@
 <% if(type === 'index'){ %>
-    <%- partial('_partial/_article/index', {post: post}) %>
+    <%- partial('_partial/_article/index', {post: post, site: site}) %>
+<% } else if(type === 'category'){ %>
+    <%- partial('_partial/_article/category', {post: post, site: site}) %>
+<% }  else if(type === 'tags'){ %>
+    <%- partial('_partial/_article/tags', {post: post, site: site}) %>
+<% } else if(type === 'archive'){ %>
+    <%- partial('_partial/_article/archive', {post: post, site: site}) %>
 <% } else if(type === 'resume'){ %>
-    <%- partial('_partial/_article/resume', {post: post}) %>
+    <%- partial('_partial/_article/resume', {post: post, site: site}) %>
 <% }  else if(type === 'about'){ %>
-    <%- partial('_partial/_article/about', {post: post}) %>
+    <%- partial('_partial/_article/about', {post: post, site: site}) %>
 <% } else { %>
-    <%- partial('_partial/_article/detail', {post: post}) %>
+    <%- partial('_partial/_article/detail', {post: post, site: site}) %>
 <% } %>

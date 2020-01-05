@@ -1,115 +1,95 @@
-<article>
-    <div style="height: 350px;">
-        <section class="post-content">
-            <span style="margin-left: 0%; display: block;" class="aphorism-contentd-one-zh"></span>
-            <span style="margin-left: 0%; display: block; margin-bottom: 10px;" class="aphorism-contentd-one-en"></span>
-            <span style="margin-left: 0%; display: block;" class="aphorism-contentd-two-zh"></span>
-            <span style="margin-left: 0%; display: block; margin-bottom: 10px;" class="aphorism-contentd-two-en"></span>
-            <span style="margin-left: 0%; display: block;" class="aphorism-contentd-three-zh"></span>
-            <span style="margin-left: 0%; display: block; margin-bottom: 10px;" class="aphorism-contentd-three-en"></span>
-            <span style="margin-left: 0%; display: block;" class="aphorism-contentd-four-zh"></span>
-            <span style="margin-left: 0%; display: block;" class="aphorism-contentd-four-en"></span>
-        </section>
+<% var category_total = 0; %>
+<% site.posts.each(function(post){ %>
+  <% if(post.categories === page.category){ %>
+    <% category_total = category_total + 1; %>
+  <% } %>
+<% }) %>
+<div class="container container-body">
+    <div class="archive">
+        <% page.posts.each(function(post){ %>
+            <div class="archive_item">
+                <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                <div class="date"><%= post.date.format('YYYY年MM月DD日') %></div>
+                <div>
+                    <div class="classify">
+                        <a class="color-0" href=""><%= post.classify %></a>
+                    </div>
+                    <div class="tags">
+                        <% if(post.tag1 !== "none"){ %>
+                            <a class="color-1" href=""><%= post.tag1 %></a>
+                        <% } %>
+                        <% if(post.tag2 !== "none"){ %>
+                            <a class="color-2" href=""><%= post.tag2 %></a>
+                        <% } %>
+                        <% if(post.tag3 !== "none"){ %>
+                            <a class="color-3" href=""><%= post.tag3 %></a>
+                        <% } %>
+                    </div>
+                    <div class="readmore">
+                        <a class="more" href="<%- url_for(post.path) %>">阅读全文</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        <div class="pagination">
+                <% if (category_total > config.per_page) { %>
+                    <%- paginator({ total: Math.ceil(category_total / config.per_page)}) %>
+                <% } %>
+        </div>
     </div>
-    <%- list_tags() %>
-</article>
-<script>
-    $(function(){
-        $(".aphorism-contentd-one-zh").typed({
-            strings: ["余生没有那么长，请你忠于你自己，活的还像自己"],
-            stringsElement: null,
-            typeSpeed:100,
-            startDelay: 0,
-		    backSpeed: 0,
-		    backDelay: 30000,
-            loop: false,
-            loopCount: 5,
-            showCursor: false
-        });
+    <div class="sidebar">
+        <div class="search">
+            <input id="search-enable" type="text" name="search-enable" value="Search">
+        </div>
+        <div class="widget">
+            <div class="widget-title">
+                <label class="category">分类</label>
+            </div>
+            <div class="category-content">
+                <%- list_categories() %>
+            </div>
+        </div>
 
-        $(".aphorism-contentd-one-en").typed({
-            strings: ["The rest of your life is not that long. Please be loyal to yourself and live like yourself."],
-            stringsElement: null,
-            typeSpeed:100,
-            startDelay: 0,
-		    backSpeed: 0,
-		    backDelay: 30000,
-            loop: false,
-            loopCount: 5,
-            showCursor: false
-        });
-    
-        $(".aphorism-contentd-two-zh").typed({
-            strings: ["技术唯一不变的是不断变化"],
-            stringsElement: null,
-            typeSpeed:100,
-            startDelay: 0,
-		    backSpeed: 0,
-		    backDelay: 30000,
-            loop: false,
-            loopCount: 5,
-            showCursor: false
-        });
-
-        $(".aphorism-contentd-two-en").typed({
-            strings: ["The only thing constant about technology is the constant change."],
-            stringsElement: null,
-            typeSpeed:100,
-            startDelay: 0,
-		    backSpeed: 0,
-		    backDelay: 30000,
-            loop: false,
-            loopCount: 5,
-            showCursor: false
-        });
-
-        $(".aphorism-contentd-three-zh").typed({
-            strings: ["坚持把简单的事情做好就是不简单，坚持把平凡的事情做好就是不平凡"],
-            stringsElement: null,
-            typeSpeed:100,
-            startDelay: 0,
-		    backSpeed: 0,
-		    backDelay: 30000,
-            loop: false,
-            loopCount: 5,
-            showCursor: false
-        });
-
-        $(".aphorism-contentd-three-en").typed({
-            strings: ["It is not simple to insist on doing simple things. It is not uncommon to insist on doing ordinary things well."],
-            stringsElement: null,
-            typeSpeed:100,
-            startDelay: 0,
-		    backSpeed: 0,
-		    backDelay: 30000,
-            loop: false,
-            loopCount: 5,
-            showCursor: false
-        });
-
-        $(".aphorism-contentd-four-zh").typed({
-            strings: ["目标的坚定是性格中最必要的力量源泉之一，也是成功的利器之一，没有它，天才会在矛盾无定的迷经中徒劳无功"],
-            stringsElement: null,
-            typeSpeed:100,
-            startDelay: 0,
-		    backSpeed: 0,
-		    backDelay: 30000,
-            loop: false,
-            loopCount: 5,
-            showCursor: false
-        });
-
-        $(".aphorism-contentd-four-en").typed({
-            strings: ["The firmness of the goal is one of the most necessary source of strength in character, and it is also one of the sharp weapons of success. Without it, heaven will be futile in the midst of an absurdly conflicting desire."],
-            stringsElement: null,
-            typeSpeed:100,
-            startDelay: 0,
-		    backSpeed: 0,
-		    backDelay: 30000,
-            loop: false,
-            loopCount: 5,
-            showCursor: false
-        });
-    });
-    
-</script>
+        <div class="widget">
+            <div class="widget-title">
+                <label class="tags">标签</label>
+            </div>
+            <div class="tags-content">
+                <%- list_tags() %>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="widget-title">
+                <label class="articles">最近文章</label>
+            </div>
+            <div class="articles-content">
+                <ul>
+                    <% var articles = 0; %>
+                    <% site.posts.each(function(post){ %>
+                        <% if(articles < 10){ %>
+                            <% articles = articles + 1; %>
+                            <li>
+                                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                            </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="widget-title">
+                <label class="links">友情链接</label>
+            </div>
+            <div class="links-content">
+                <ul>
+                    <li>
+                        <a href="https://www.haomwei.com/">屠城</a>
+                    </li>
+                    <li>
+                        <a href="https://www.haomwei.com/">屠城</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

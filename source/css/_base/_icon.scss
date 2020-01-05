@@ -6,6 +6,10 @@
     url('../../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
     url('../../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../../fonts/fontawesome-webfont.woff?v=4.7.0');
+}
 
 .iconfont {
     font-family:"iconfont" !important;

@@ -1,80 +1,13 @@
-header{
+header {
     height: 50px;
     width: 100%;
-    background: $header-bg;
     position: fixed;
-    color: #fff;
     z-index: 99999;
-
-    .banner{
-        position: absolute;
-        left: 10%;
-        top: 18px;
-        font-weight: 800;
-        a{
-            color: #fff;
-            text-decoration: none;
-        }
-    }
-
-    .menu{
-        position: absolute;
-        display: none;
-        right: 20px;
-        top: 18px;
-
-        @media screen and (max-width: 376px){
-            display: block;
-        }
-    }
-    
-    .menu_list{
-        display: block;
-        position: absolute;
-        right: 10%;
-        list-style: none;
-        transition: all .1s ease-out;
-
-        @media screen and (max-width: 376px){
-            top: 50px;
-            width: 100%;
-            background: #ccc;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-around;
-        }
-
-        &.hide{
-            @media screen and (max-width: 376px){
-                transform: translate3d(-100%, 0, 0);
-            }
-        }
-
-        &.show{
-            right: 0 !important;
-            @media screen and (max-width: 376px){
-                transform: translate3d(0, 0, 0);
-            }
-        }
-
-        li{
-            float: left;
-            a{
-                color: #fff;
-                padding:0 14px;
-                line-height: 50px;
-                font-size: 1em;
-                text-decoration: none;
-                display: inline-block;
-                height: 100%;
-                width: 100%;
-                &:hover{
-                    text-decoration: underline;
-                }
-                @media screen and (max-width: 376px){
-                    padding: 0;
-                }
-            }
-        }
-    }
+    top: 0;
+    margin-bottom: 0;
+    background: #FFF;
+    border: none;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
